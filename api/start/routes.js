@@ -36,13 +36,13 @@ const addPrefixToGroup = group => {
 addPrefixToGroup(
   Route.group(() => {
     // Insertar rutas sin protección de autenticación aquí
+    Route.post("login", "UserController.login")
   })
 );
 
 addPrefixToGroup(
   Route.group(() => {
     // Insertar rutas con protección de autenticación aquí
-    Route.get("blogs/:id", "BlogController.show")
 
 
   }).middleware("auth")

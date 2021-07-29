@@ -25,7 +25,7 @@ class UserController {
     let user = await User.findBy(body.email)
     let token = await auth.generate(user)
     let data = {}
-    data.HEV_SESSION_INFO = token
+    data.CASHFLOW_SESSION_INFO = token
     return data
   }
 
@@ -148,8 +148,8 @@ class UserController {
 
 
   async login({ auth, request }) {
-    const { email, password } = request.all();
-    let token = await auth.attempt(email, password)
+    const { email, password, company } = request.all();
+    let token = await auth.attempt(email, password, company)
     const user = (await User.findBy('email', email)).toJSON()
     let isUser = false
     token.roles = user.roles.map(roleMap => {
@@ -169,6 +169,7 @@ class UserController {
 
     console.log(permissions, 'permissions')
     token.email = user.email
+    token.company = user.company
     let data = {}
     data.CASHFLOW_SESSION_INFO = token
     return data
