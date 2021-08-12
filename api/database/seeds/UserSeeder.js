@@ -17,32 +17,18 @@ const Hash = use('Hash')
 const Factory = use('Factory')
 
 const userData = [
-  /* {
+   {
     _id: '5e90d6e6f75366526a680091',
-    email: 'admin@hevent.com',
-    password: 'hevent2020',
+    email: 'admin@pronerdcom.com',
+    password: 'pronerdcom2020',
     full_name: 'Administrador del Sistema',
     roles: [1]
-  },
-  {
-    _id: '5e90d6e6f75366526a680092',
-    email: 'cliente@hevent.com',
-    password: 'hevent2020',
-    full_name: 'Usuario Cliente de Ejemplo',
-    roles: [2]
-  },
-  {
-    _id: '5e90d6e6f75366526a680093',
-    email: 'proveedor@hevent.com',
-    password: 'hevent2020',
-    full_name: 'Usuario Proveedor de Ejemplo',
-    roles: [3]
-  } */
+  }
 ]
 
 class UserSeeder {
   async run () {
-    /* for (let i of userData) {
+     for (let i of userData) {
       let user = await User.find(i._id)
       if (!user) {
         await User.create(i)
@@ -50,12 +36,11 @@ class UserSeeder {
       else {
         user.email = i.email
         user.password = i.password
-        user.name = i.name
-        user.lastName = i.lastName
+        user.full_name = i.full_name
         user.roles = i.roles
         await user.save()
       }
-    } */
+    }
     console.log('Finished User')
   }
 }

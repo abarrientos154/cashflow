@@ -1,10 +1,5 @@
 <template>
-  <q-item
-    clickable
-    tag="a"
-    target="_blank"
-    :href="link"
-  >
+  <q-item clickable tag="a" target="_blank" @click="enrutado()" >
     <q-item-section
       v-if="icon"
       avatar
@@ -37,12 +32,18 @@ export default {
 
     link: {
       type: String,
-      default: '#'
+      default: ''
     },
 
     icon: {
       type: String,
       default: ''
+    }
+  },
+  methods: {
+    enrutado () {
+      console.log(this.link, 'tis.hmira')
+      this.$router.push(this.link)
     }
   }
 }

@@ -18,7 +18,7 @@
 
                 <div class="column q-mt-lg">
                   <div class="text-grey text-bold q-pb-sm text-uppercase"> Usuario </div>
-                  <q-input v-model="form.user" placeholder="Usuario" outlined dense />
+                  <q-input v-model="form.email" placeholder="Usuario" outlined dense />
                 </div>
 
                 <div class="column q-mt-lg">
@@ -78,7 +78,8 @@ export default {
     ...mapMutations('generals', ['login']),
     async logueo () {
       this.$q.loading.show()
-      await this.$api.post('login').then(res => {
+      await this.$api.post('login', this.form).then(res => {
+        this.$q.loading.hide()
         if (res) {
           console.log(res, 'login res')
           this.login(res)

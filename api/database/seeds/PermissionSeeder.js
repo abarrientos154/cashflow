@@ -14,11 +14,16 @@
 const Factory = use('Factory')
 const Permission = use("App/Models/Permission")
 const permissionData = [
-  /* {
+  {
     id: 1,
-    name: 'Cliente',
-    description: 'Permiso para los botones del footer para el CLIENTE'
-  } */
+    name: 'Super Admin',
+    description: 'Permiso para los botones del menu para el Super Admin'
+  },
+  {
+    id: 2,
+    name: 'Company',
+    description: 'Permiso para los botones del menu para el Company'
+  }
 ]
 
 class PermissionSeeder {

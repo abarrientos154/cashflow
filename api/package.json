@@ -42,7 +42,7 @@
     "randomatic": "^3.1.1",
     "sharp": "^0.25.2",
     "stripe": "^8.149.0",
-    "vuelidate": "^0.7.4"
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {},
   "autoload": {
